@@ -1,0 +1,11 @@
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\elcap\source\repos\DaringBurgerC\CapaNegocio\obj\Debug\CapaNegocio.pdb
