@@ -23,9 +23,12 @@ namespace CapaDatos
                 try
                 {
                     // Trae consulta
-                    string query = "select IdUsuario, NombreCompleto, Clave, Estado from usuario";
+                    StringBuilder query = new StringBuilder();
+                    // AppendLine: Permite dar salto de línea
+                    query.AppendLine("select u.IdUsuario, u.NombreCompleto, u.Clave, u.Estado, r.IdRol, r.Descripcion from usuario u");
+                    query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
                     // comando sql llamado "cmd" nuevo comando sql pide: axion de la ejecucion (query)
-                    SqlCommand cmd = new SqlCommand(query, oconexion);
+                    SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     //Se le informa que el tipo de comando utilizado, es de texto
                     cmd.CommandType = CommandType.Text;
                     //abre la conexion
@@ -44,7 +47,8 @@ namespace CapaDatos
                                 IdUsuario = Convert.ToInt32(dr["IdUsuario"]), 
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Clave = dr["Clave"].ToString(),
-                                Estado = Convert.ToBoolean(dr["Estado"])
+                                Estado = Convert.ToBoolean(dr["Estado"]),
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), Descripcion = dr["Descripcion"].ToString() }
                             }) ;
                         }
                     }

@@ -7,3 +7,12 @@ C:\Users\elcap\source\repos\DaringBurgerC\CapaDatos\obj\Debug\CapaDatos.csproj.C
 C:\Users\elcap\source\repos\DaringBurgerC\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 C:\Users\elcap\source\repos\DaringBurgerC\CapaDatos\obj\Debug\CapaDatos.dll
 C:\Users\elcap\source\repos\DaringBurgerC\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\elcap\source\repos\DaringBurger\CapaDatos\obj\Debug\CapaDatos.pdb

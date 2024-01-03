@@ -37,9 +37,13 @@ namespace DaringBurgerC
             this.Usuarios = new FontAwesome.Sharp.IconDropDownButton();
             this.Inventario = new FontAwesome.Sharp.IconDropDownButton();
             this.categoríasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CargarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EstablecerPreciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Informes = new FontAwesome.Sharp.IconDropDownButton();
+            this.InformeCaja = new FontAwesome.Sharp.IconDropDownButton();
+            this.Pedidos = new FontAwesome.Sharp.IconDropDownButton();
+            this.TotalCaja = new FontAwesome.Sharp.IconDropDownButton();
             this.Contenedor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
@@ -88,7 +92,10 @@ namespace DaringBurgerC
             this.Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Usuarios,
             this.Inventario,
-            this.Informes});
+            this.Informes,
+            this.InformeCaja,
+            this.Pedidos,
+            this.TotalCaja});
             this.Menu.Location = new System.Drawing.Point(0, 106);
             this.Menu.Name = "Menu";
             this.Menu.Size = new System.Drawing.Size(800, 70);
@@ -117,7 +124,7 @@ namespace DaringBurgerC
             this.categoríasToolStripMenuItem,
             this.CargarProductoToolStripMenuItem,
             this.EstablecerPreciosToolStripMenuItem});
-            this.Inventario.IconChar = FontAwesome.Sharp.IconChar.Hamburger;
+            this.Inventario.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
             this.Inventario.IconColor = System.Drawing.Color.Black;
             this.Inventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Inventario.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -130,22 +137,33 @@ namespace DaringBurgerC
             // 
             // categoríasToolStripMenuItem
             // 
+            this.categoríasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoríaToolStripMenuItem});
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
             this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.categoríasToolStripMenuItem.Text = "Bebidas";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
+            // 
+            // categoríaToolStripMenuItem
+            // 
+            this.categoríaToolStripMenuItem.Name = "categoríaToolStripMenuItem";
+            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.categoríaToolStripMenuItem.Text = "Categoría";
+            this.categoríaToolStripMenuItem.Click += new System.EventHandler(this.categoríaToolStripMenuItem_Click);
             // 
             // CargarProductoToolStripMenuItem
             // 
             this.CargarProductoToolStripMenuItem.Name = "CargarProductoToolStripMenuItem";
             this.CargarProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.CargarProductoToolStripMenuItem.Text = "Hamburguesas";
+            this.CargarProductoToolStripMenuItem.Click += new System.EventHandler(this.CargarProductoToolStripMenuItem_Click);
             // 
             // EstablecerPreciosToolStripMenuItem
             // 
             this.EstablecerPreciosToolStripMenuItem.Name = "EstablecerPreciosToolStripMenuItem";
             this.EstablecerPreciosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.EstablecerPreciosToolStripMenuItem.Text = "Cargar Producto";
+            this.EstablecerPreciosToolStripMenuItem.Click += new System.EventHandler(this.EstablecerPreciosToolStripMenuItem_Click);
             // 
             // Informes
             // 
@@ -160,6 +178,52 @@ namespace DaringBurgerC
             this.Informes.Text = "Informes";
             this.Informes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Informes.ToolTipText = "Informes";
+            this.Informes.Click += new System.EventHandler(this.Informes_Click);
+            // 
+            // InformeCaja
+            // 
+            this.InformeCaja.AutoSize = false;
+            this.InformeCaja.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
+            this.InformeCaja.IconColor = System.Drawing.Color.Black;
+            this.InformeCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.InformeCaja.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.InformeCaja.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.InformeCaja.Name = "InformeCaja";
+            this.InformeCaja.Size = new System.Drawing.Size(80, 67);
+            this.InformeCaja.Text = "Caja Inicio";
+            this.InformeCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.InformeCaja.ToolTipText = "InformeCaja";
+            this.InformeCaja.Click += new System.EventHandler(this.InformeCaja_Click);
+            // 
+            // Pedidos
+            // 
+            this.Pedidos.AutoSize = false;
+            this.Pedidos.IconChar = FontAwesome.Sharp.IconChar.Hamburger;
+            this.Pedidos.IconColor = System.Drawing.Color.Black;
+            this.Pedidos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Pedidos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.Pedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.Pedidos.Name = "Pedidos";
+            this.Pedidos.Size = new System.Drawing.Size(80, 67);
+            this.Pedidos.Text = "Pedidos";
+            this.Pedidos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Pedidos.ToolTipText = "Pedidos";
+            this.Pedidos.Click += new System.EventHandler(this.Pedidos_Click);
+            // 
+            // TotalCaja
+            // 
+            this.TotalCaja.AutoSize = false;
+            this.TotalCaja.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.TotalCaja.IconColor = System.Drawing.Color.Black;
+            this.TotalCaja.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TotalCaja.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.TotalCaja.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.TotalCaja.Name = "TotalCaja";
+            this.TotalCaja.Size = new System.Drawing.Size(80, 67);
+            this.TotalCaja.Text = "Total Caja";
+            this.TotalCaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.TotalCaja.ToolTipText = "TotalCaja";
+            this.TotalCaja.Click += new System.EventHandler(this.TotalCaja_Click);
             // 
             // Contenedor
             // 
@@ -225,16 +289,20 @@ namespace DaringBurgerC
         internal System.Windows.Forms.ToolStrip MenuTitulo;
         internal System.Windows.Forms.PictureBox LogoDB;
         internal System.Windows.Forms.PictureBox PictureBox1;
-        internal System.Windows.Forms.ToolStrip Menu;
+        internal new System.Windows.Forms.ToolStrip Menu;
         internal FontAwesome.Sharp.IconDropDownButton Usuarios;
         internal FontAwesome.Sharp.IconDropDownButton Inventario;
         internal System.Windows.Forms.ToolStripMenuItem EstablecerPreciosToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem CargarProductoToolStripMenuItem;
-        internal FontAwesome.Sharp.IconDropDownButton Informes;
+        internal FontAwesome.Sharp.IconDropDownButton TotalCaja;
         internal System.Windows.Forms.Panel Contenedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblusuario;
         private System.Windows.Forms.ToolStripMenuItem categoríasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoríaToolStripMenuItem;
+        internal FontAwesome.Sharp.IconDropDownButton Informes;
+        internal FontAwesome.Sharp.IconDropDownButton InformeCaja;
+        internal FontAwesome.Sharp.IconDropDownButton Pedidos;
     }
 }
 
