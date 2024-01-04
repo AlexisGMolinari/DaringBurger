@@ -61,6 +61,126 @@ namespace CapaDatos
             }
             return lista;
         }
-        
+        // Registrar
+        public int Registrar(Usuario obj, out string Mensaje)
+        {
+            int idUsuarioGenerado = 0;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(conexion.cadena))
+                {
+                    // comando sql llamado "cmd", va a ejecutar el "Evento" creado en la DB como "RegistrarUsuario"
+                    SqlCommand cmd = new SqlCommand("SP_REGISTRARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("Clave", obj.Clave);
+                    cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
+                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
+                    cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+
+                    //Se le informa que el tipo de comando utilizado, es de texto
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //abre la conexion
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery(); // Ejecutamos el comando
+
+                    //obtener valores de salida
+                    idUsuarioGenerado = Convert.ToInt32(cmd.Parameters["IdUsuarioResultado"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                idUsuarioGenerado = 0;
+                Mensaje = ex.Message;
+            }
+
+            return idUsuarioGenerado;
+        }
+
+
+        // Editar
+        public bool Editar(Usuario obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(conexion.cadena))
+                {
+                    // comando sql llamado "cmd", va a ejecutar el "Evento" creado en la DB como "EditarUsuario"
+                    SqlCommand cmd = new SqlCommand("SP_EDITARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
+                    cmd.Parameters.AddWithValue("NombreCompleto", obj.NombreCompleto);
+                    cmd.Parameters.AddWithValue("Clave", obj.Clave);
+                    cmd.Parameters.AddWithValue("IdRol", obj.oRol.IdRol);
+                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
+
+                    //Se le informa que el tipo de comando utilizado, es de texto
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //abre la conexion
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery(); // Ejecutamos el comando
+
+                    //obtener valores de salida
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+
+            return Respuesta;
+        }
+
+
+        // ELIMINAR 
+        public bool Eliminar(Usuario obj, out string Mensaje)
+        {
+            bool Respuesta = false;
+            Mensaje = string.Empty;
+
+            try
+            {
+                using (SqlConnection oconexion = new SqlConnection(conexion.cadena))
+                {
+                    // comando sql llamado "cmd", va a ejecutar el "Evento" creado en la DB como "EliminarUsuario"
+                    SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
+                    cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
+                    cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+
+                    //Se le informa que el tipo de comando utilizado, es de texto
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //abre la conexion
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery(); // Ejecutamos el comando
+
+                    //obtener valores de salida
+                    Respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Respuesta = false;
+                Mensaje = ex.Message;
+            }
+            return Respuesta;
+        }
     }
+    
 }
+
+

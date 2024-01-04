@@ -33,7 +33,7 @@ namespace DaringBurgerC
 
            foreach (Rol item in ListaRol)
             {
-                cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion });
+                cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion }); //Debe mostrar el texto y valor de las propiedades
                 cboRol.DisplayMember = "Texto";
                 cboRol.ValueMember = "valor";
                 cboRol.SelectedIndex = 0;
@@ -76,10 +76,24 @@ namespace DaringBurgerC
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Pasar los datos de los txt a la Grilla
-            dgvDataUsuario.Rows.Add(new object[] 
-                {"", // Boton
-                txtId.Text, // Id (Txt oculto)
+            string mensaje = string.Empty;
+            Usuario obj_usuario = new Usuario()
+            {
+                IdUsuario = Convert.ToInt32(txtId.Text),
+                NombreCompleto = txtNombreCompleto.Text,
+                Clave = txtClave.Text,
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cboRol.SelectedItem).valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).valor) == 1 ? true : false
+            };
+
+            int IdUsuarioGenerado = new CN_Usuario().Registrar(obj_usuario, out mensaje);
+            
+            if (IdUsuarioGenerado != 0) // Si el usuario generado es diferente a 0, que lo muestre en la grilla
+            {
+                // Pasar los datos de los txt a la Grilla
+                dgvDataUsuario.Rows.Add(new object[]
+                    {"", // Boton
+                IdUsuarioGenerado, // Id (Txt oculto)
                 txtNombreCompleto.Text, // txtNombre
                 // El Id al ser 1 y 2 (roles) se utiliza el siguiente evento... De esta forma obtenemos el item seleccionado.
                 ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(), // Nombre del Rol (Administrador / Empleado)
@@ -89,9 +103,16 @@ namespace DaringBurgerC
                 txtClave.Text, // Clave del usuario
                 ((OpcionCombo)cboEstado.SelectedItem).valor.ToString(), // Valor del estado ( 1: Activo / 0: No Activo )
                 ((OpcionCombo)cboRol.SelectedItem).valor.ToString() // Valor del Rol ( 1: ADMINISTRADOR / 2: EMPLEADO )
-            });
-            // Llamamos al evento limpiar
-            Limpiar();
+                    });           
+                // Llamamos al evento limpiar
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
+
+
         }
         // Limpiar los txt al presionar "Guardar"
         private void Limpiar()

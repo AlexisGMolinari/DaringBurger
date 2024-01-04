@@ -57,10 +57,10 @@ namespace DaringBurgerC
             this.label9 = new System.Windows.Forms.Label();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnLimpia = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
             this.btnLupa = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarGrilla = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txtIndice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDataUsuario)).BeginInit();
@@ -322,23 +322,23 @@ namespace DaringBurgerC
             this.textBox1.Size = new System.Drawing.Size(137, 20);
             this.textBox1.TabIndex = 20;
             // 
-            // btnLimpia
+            // btnLimpiarBuscador
             // 
-            this.btnLimpia.BackColor = System.Drawing.Color.LightGray;
-            this.btnLimpia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpia.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpia.ForeColor = System.Drawing.Color.White;
-            this.btnLimpia.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpia.IconColor = System.Drawing.Color.Black;
-            this.btnLimpia.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpia.IconSize = 22;
-            this.btnLimpia.Location = new System.Drawing.Point(735, 12);
-            this.btnLimpia.Name = "btnLimpia";
-            this.btnLimpia.Size = new System.Drawing.Size(23, 23);
-            this.btnLimpia.TabIndex = 22;
-            this.btnLimpia.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscador.BackColor = System.Drawing.Color.LightGray;
+            this.btnLimpiarBuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarBuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarBuscador.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBuscador.IconSize = 22;
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(735, 12);
+            this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
+            this.btnLimpiarBuscador.Size = new System.Drawing.Size(23, 23);
+            this.btnLimpiarBuscador.TabIndex = 22;
+            this.btnLimpiarBuscador.UseVisualStyleBackColor = false;
             // 
             // btnLupa
             // 
@@ -378,25 +378,25 @@ namespace DaringBurgerC
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // btnEditar
+            // btnLimpiarGrilla
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 25;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(21, 384);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(131, 23);
-            this.btnEditar.TabIndex = 12;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnLimpiarGrilla.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLimpiarGrilla.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarGrilla.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarGrilla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarGrilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiarGrilla.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarGrilla.IconChar = FontAwesome.Sharp.IconChar.Rotate;
+            this.btnLimpiarGrilla.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiarGrilla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarGrilla.IconSize = 25;
+            this.btnLimpiarGrilla.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiarGrilla.Location = new System.Drawing.Point(21, 384);
+            this.btnLimpiarGrilla.Name = "btnLimpiarGrilla";
+            this.btnLimpiarGrilla.Size = new System.Drawing.Size(131, 23);
+            this.btnLimpiarGrilla.TabIndex = 12;
+            this.btnLimpiarGrilla.Text = "Limpiar";
+            this.btnLimpiarGrilla.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -435,7 +435,7 @@ namespace DaringBurgerC
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtIndice);
-            this.Controls.Add(this.btnLimpia);
+            this.Controls.Add(this.btnLimpiarBuscador);
             this.Controls.Add(this.btnLupa);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cboBusqueda);
@@ -445,7 +445,7 @@ namespace DaringBurgerC
             this.Controls.Add(this.dgvDataUsuario);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnLimpiarGrilla);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cboEstado);
@@ -481,7 +481,7 @@ namespace DaringBurgerC
         private System.Windows.Forms.ComboBox cboEstado;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnLimpiarGrilla;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dgvDataUsuario;
@@ -490,7 +490,7 @@ namespace DaringBurgerC
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboBusqueda;
         private System.Windows.Forms.TextBox textBox1;
-        private FontAwesome.Sharp.IconButton btnLimpia;
+        private FontAwesome.Sharp.IconButton btnLimpiarBuscador;
         private FontAwesome.Sharp.IconButton btnLupa;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
