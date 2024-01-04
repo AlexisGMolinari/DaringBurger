@@ -29,8 +29,8 @@ namespace DaringBurgerC
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace DaringBurgerC
             this.txtId = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
             this.btnLupa = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
@@ -186,15 +186,15 @@ namespace DaringBurgerC
             this.dgvDataUsuario.AllowUserToDeleteRows = false;
             this.dgvDataUsuario.AllowUserToResizeColumns = false;
             this.dgvDataUsuario.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Goldenrod;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Goldenrod;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDataUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDataUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -205,17 +205,17 @@ namespace DaringBurgerC
             this.Clave,
             this.EstadoValor,
             this.IdRol});
-            this.dgvDataUsuario.Location = new System.Drawing.Point(258, 73);
+            this.dgvDataUsuario.Location = new System.Drawing.Point(258, 65);
             this.dgvDataUsuario.MultiSelect = false;
             this.dgvDataUsuario.Name = "dgvDataUsuario";
             this.dgvDataUsuario.ReadOnly = true;
             this.dgvDataUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvDataUsuario.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Yellow;
-            this.dgvDataUsuario.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Yellow;
+            this.dgvDataUsuario.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDataUsuario.RowTemplate.Height = 28;
-            this.dgvDataUsuario.Size = new System.Drawing.Size(471, 361);
+            this.dgvDataUsuario.Size = new System.Drawing.Size(471, 385);
             this.dgvDataUsuario.TabIndex = 15;
             this.dgvDataUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataUsuario_CellContentClick);
             this.dgvDataUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDataUsuario_CellPainting);
@@ -278,13 +278,15 @@ namespace DaringBurgerC
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(186, 9);
+            this.label8.Location = new System.Drawing.Point(180, 1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(602, 46);
+            this.label8.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.label8.Size = new System.Drawing.Size(617, 46);
             this.label8.TabIndex = 16;
             this.label8.Text = "Lista de usuarios:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtId
             // 
@@ -294,12 +296,13 @@ namespace DaringBurgerC
             this.txtId.Size = new System.Drawing.Size(35, 20);
             this.txtId.TabIndex = 17;
             this.txtId.Text = "0";
+            this.txtId.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label9.Location = new System.Drawing.Point(361, 18);
+            this.label9.Location = new System.Drawing.Point(387, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 18;
@@ -309,18 +312,18 @@ namespace DaringBurgerC
             // 
             this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(420, 13);
+            this.cboBusqueda.Location = new System.Drawing.Point(446, 14);
             this.cboBusqueda.Name = "cboBusqueda";
             this.cboBusqueda.Size = new System.Drawing.Size(137, 21);
             this.cboBusqueda.TabIndex = 19;
             // 
-            // textBox1
+            // txtBusqueda
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(563, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.Location = new System.Drawing.Point(589, 15);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(137, 20);
+            this.txtBusqueda.TabIndex = 20;
             // 
             // btnLimpiarBuscador
             // 
@@ -334,11 +337,12 @@ namespace DaringBurgerC
             this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
             this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBuscador.IconSize = 22;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(735, 12);
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(761, 13);
             this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             this.btnLimpiarBuscador.Size = new System.Drawing.Size(23, 23);
             this.btnLimpiarBuscador.TabIndex = 22;
             this.btnLimpiarBuscador.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscador.Click += new System.EventHandler(this.btnLimpiarBuscador_Click);
             // 
             // btnLupa
             // 
@@ -352,11 +356,12 @@ namespace DaringBurgerC
             this.btnLupa.IconColor = System.Drawing.Color.Black;
             this.btnLupa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLupa.IconSize = 20;
-            this.btnLupa.Location = new System.Drawing.Point(706, 12);
+            this.btnLupa.Location = new System.Drawing.Point(732, 13);
             this.btnLupa.Name = "btnLupa";
             this.btnLupa.Size = new System.Drawing.Size(23, 23);
             this.btnLupa.TabIndex = 21;
             this.btnLupa.UseVisualStyleBackColor = false;
+            this.btnLupa.Click += new System.EventHandler(this.btnLupa_Click);
             // 
             // btnEliminar
             // 
@@ -377,6 +382,7 @@ namespace DaringBurgerC
             this.btnEliminar.TabIndex = 13;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiarGrilla
             // 
@@ -397,6 +403,7 @@ namespace DaringBurgerC
             this.btnLimpiarGrilla.TabIndex = 12;
             this.btnLimpiarGrilla.Text = "Limpiar";
             this.btnLimpiarGrilla.UseVisualStyleBackColor = false;
+            this.btnLimpiarGrilla.Click += new System.EventHandler(this.btnLimpiarGrilla_Click);
             // 
             // btnGuardar
             // 
@@ -427,6 +434,7 @@ namespace DaringBurgerC
             this.txtIndice.Size = new System.Drawing.Size(35, 20);
             this.txtIndice.TabIndex = 23;
             this.txtIndice.Text = "-1";
+            this.txtIndice.Visible = false;
             // 
             // frmUsuarios
             // 
@@ -437,7 +445,7 @@ namespace DaringBurgerC
             this.Controls.Add(this.txtIndice);
             this.Controls.Add(this.btnLimpiarBuscador);
             this.Controls.Add(this.btnLupa);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.cboBusqueda);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtId);
@@ -489,7 +497,7 @@ namespace DaringBurgerC
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cboBusqueda;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqueda;
         private FontAwesome.Sharp.IconButton btnLimpiarBuscador;
         private FontAwesome.Sharp.IconButton btnLupa;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;

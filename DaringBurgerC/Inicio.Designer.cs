@@ -230,7 +230,7 @@ namespace DaringBurgerC
             this.Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contenedor.Location = new System.Drawing.Point(0, 176);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(800, 492);
+            this.Contenedor.Size = new System.Drawing.Size(800, 455);
             this.Contenedor.TabIndex = 6;
             // 
             // label1
@@ -261,8 +261,9 @@ namespace DaringBurgerC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(800, 668);
+            this.ClientSize = new System.Drawing.Size(800, 631);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.Contenedor);
@@ -271,6 +272,7 @@ namespace DaringBurgerC
             this.Controls.Add(this.LogoDB);
             this.Controls.Add(this.MenuTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";

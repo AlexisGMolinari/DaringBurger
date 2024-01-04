@@ -31,15 +31,35 @@ namespace DaringBurgerC
             // Obtenermos el evento de lista creado en CD_Rol
             List<Rol> ListaRol = new CN_Rol().Listar();
 
-           foreach (Rol item in ListaRol)
+
+            // OPCION CREADA CON EL VIDEO PARA MOSTRAR LOS VALORES EN EL "COMBOBOX" DE ROL Y ESTADO
+            //foreach (Rol item in ListaRol)
+            // {
+            //     cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion }); //Debe mostrar el texto y valor de las propiedades
+            //     cboRol.DisplayMember = "Texto";
+            //     cboRol.ValueMember = "valor";
+            //     cboRol.SelectedIndex = 0;
+            // }
+
+            // OPCION CREADA CON [CHAT GPT] PARA MOSTRAR LOS VALORES EN EL "COMBOBOX" DE ROL Y ESTADO
+            foreach (Rol item in ListaRol)
             {
-                cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion }); //Debe mostrar el texto y valor de las propiedades
-                cboRol.DisplayMember = "Texto";
-                cboRol.ValueMember = "valor";
-                cboRol.SelectedIndex = 0;
+                cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion });
             }
-           // Obtener en la lista del filtro, los datos a mostrar
-           foreach (DataGridViewColumn columna in dgvDataUsuario.Columns)
+
+            // Establecer los DisplayMember y ValueMember fuera del bucle
+            cboRol.DisplayMember = "Texto";
+            cboRol.ValueMember = "valor";
+
+            // Seleccionar el índice deseado, por ejemplo, seleccionar el primer elemento
+            cboRol.SelectedIndex = 0;
+
+
+
+
+
+            // Obtener en la lista del filtro, los datos a mostrar
+            foreach (DataGridViewColumn columna in dgvDataUsuario.Columns)
             {
                 // Si la lista de búsqueda es visible, que muestre los valores de la columna (( Pero que no muestre el botón vacío))
                 if (columna.Visible == true && columna.Name != "btnSeleccionar")
@@ -86,13 +106,17 @@ namespace DaringBurgerC
                 Estado = Convert.ToInt32(((OpcionCombo)cboEstado.SelectedItem).valor) == 1 ? true : false
             };
 
-            int IdUsuarioGenerado = new CN_Usuario().Registrar(obj_usuario, out mensaje);
-            
-            if (IdUsuarioGenerado != 0) // Si el usuario generado es diferente a 0, que lo muestre en la grilla
+
+            // Validación para cuando se EDITE el Usuario
+            if (obj_usuario.IdUsuario == 0)
             {
-                // Pasar los datos de los txt a la Grilla
-                dgvDataUsuario.Rows.Add(new object[]
-                    {"", // Boton
+                int IdUsuarioGenerado = new CN_Usuario().Registrar(obj_usuario, out mensaje);
+
+                if (IdUsuarioGenerado != 0) // Si el usuario generado es diferente a 0, que lo muestre en la grilla
+                {
+                    // Pasar los datos de los txt a la Grilla
+                    dgvDataUsuario.Rows.Add(new object[]
+                        {"", // Boton
                 IdUsuarioGenerado, // Id (Txt oculto)
                 txtNombreCompleto.Text, // txtNombre
                 // El Id al ser 1 y 2 (roles) se utiliza el siguiente evento... De esta forma obtenemos el item seleccionado.
@@ -103,14 +127,39 @@ namespace DaringBurgerC
                 txtClave.Text, // Clave del usuario
                 ((OpcionCombo)cboEstado.SelectedItem).valor.ToString(), // Valor del estado ( 1: Activo / 0: No Activo )
                 ((OpcionCombo)cboRol.SelectedItem).valor.ToString() // Valor del Rol ( 1: ADMINISTRADOR / 2: EMPLEADO )
-                    });           
-                // Llamamos al evento limpiar
-                Limpiar();
+                        });
+                    // Llamamos al evento limpiar
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
             else
             {
-                MessageBox.Show(mensaje);
+                bool resultado = new CN_Usuario().Editar(obj_usuario, out mensaje); // Reutilizamos funcionalidad de Registrar, para "editar" llamando al evento de CN_Usuario
+
+                if (resultado)
+                {
+                    DataGridViewRow row = dgvDataUsuario.Rows[Convert.ToInt32(txtIndice.Text)];
+                    row.Cells["Id"].Value = txtId.Text;
+                    row.Cells["NombreCompleto"].Value = txtNombreCompleto.Text;
+                    row.Cells["Rol"].Value = ((OpcionCombo)cboRol.SelectedItem).Texto.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString();
+                    row.Cells["Clave"].Value = txtClave.Text;
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)cboEstado.SelectedItem).valor.ToString();
+                    row.Cells["IdRol"].Value = ((OpcionCombo)cboRol.SelectedItem).valor.ToString();
+                    Limpiar();
+
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
+
+
 
 
         }
@@ -124,6 +173,8 @@ namespace DaringBurgerC
             txtConfirmarClave.Text = "";
             cboEstado.SelectedIndex = 0;
             cboRol.SelectedIndex = 0;
+
+            txtNombreCompleto.Select();
         }
 
         private void dgvDataUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
@@ -164,7 +215,7 @@ namespace DaringBurgerC
                     foreach (OpcionCombo oc in cboRol.Items)
                     {
                         //  Si el valor del item es igual al que se muestra en grilla, entonces obtiene ese Indice del combo box
-                        if (Convert.ToInt32 (oc.valor) == Convert.ToInt32 (dgvDataUsuario.Rows[indice].Cells["IdRol"].Value))
+                        if (Convert.ToInt32(oc.valor) == Convert.ToInt32(dgvDataUsuario.Rows[indice].Cells["IdRol"].Value))
                         {
                             // Al obtener el indice (oc: optionCombo) devuelve la coleccion del elemento. Entonces mostrará dentro de cboRol, el indice obtenido.
                             int indice_combo = cboRol.Items.IndexOf(oc);
@@ -186,5 +237,67 @@ namespace DaringBurgerC
                 }
             }
         }
+
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(txtId.Text) != 0) // Si el usuario seleccionado es diferente a 0 (Se selecciona un usuario de grilla) Entonces
+            {   // Si luego del mensaje de alerta, presiona "Si" entonces
+                if (MessageBox.Show("¿Desea eliminar el usuario?","Mensaje",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes) 
+                {
+                    string mensaje = string.Empty; // Declaramos mensaje como vacío
+                    Usuario obj_usuario = new Usuario() //Declaramos usuario
+                    {
+                        IdUsuario = Convert.ToInt32(txtId.Text), //Al usuario seleccionado
+                    };
+                    bool respuesta = new CN_Usuario().Eliminar(obj_usuario, out mensaje); //Se llama al evento "Eliminar" de (CN_Usuario)
+                    if (respuesta) 
+                    {
+                        dgvDataUsuario.Rows.RemoveAt(Convert.ToInt32(txtIndice.Text)); // Entonces, una vez confirmado todo, se removerá el usuario seleccionado (Dejará como "INACTIVO")
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void btnLupa_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)cboBusqueda.SelectedItem).valor.ToString();
+
+            if (dgvDataUsuario.Rows.Count > 0) // Si existe alguna lista de usuarios
+            {   // Recorre cada fila de la grilla
+                foreach (DataGridViewRow row in dgvDataUsuario.Rows)
+                {
+                    // Trim: Elimina espacios al inicio o al final
+                    // ToUpper: Coloca los caracteres en Mayuscula
+                    // Contains(): Indicamos que necesitamos buscar lo que (contenga) el "TextBox"
+                    // En las celdas de las filas, donde las columnas retornen el valor, que limpie los espacios al final o inicio y que convierta en mayuscula. Si es que contiene (lo que se busca en la caja de texto) sin espacios al inicio y final y con mayusculas
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true; // En el caso que contenga el texto que buscamos, muestralo.
+                    else
+                        row.Visible = false; // Si no lo contiene, no muestra.
+                }
+            }
+        }
+
+        private void btnLimpiarBuscador_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = ""; // Limpiamos el textbox
+            foreach(DataGridViewRow row in dgvDataUsuario.Rows) // Especificamos que al haber limpiado, busque los datos de la grilla
+            {
+                row.Visible = true; // Y que los muestre a todos
+            }
+        }
+
+        private void btnLimpiarGrilla_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+
+        
     }
 }

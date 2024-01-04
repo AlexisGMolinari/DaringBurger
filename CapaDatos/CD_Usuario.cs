@@ -17,7 +17,7 @@ namespace CapaDatos
         public List<Usuario> Listar ()
         {
             List<Usuario> lista = new List<Usuario>();
-            // usamos cadena de conexion, declaramos como "objeto" la conexion (oconexion) como nuevo conector de sql (usamos "conexion.cadena" <- cadena: evento creado en "Conexion.cs" para unir con bd
+            // usamos cadena de conexion, declaramos como "objeto" la conexion (oconexion) como nuevo conector de sql (usamos "conexion.cadena" <- cadena: evento creado en "Conexion.cs" para unir con bd)
             using (SqlConnection oconexion = new SqlConnection(conexion.cadena))
             {
                 try
@@ -27,6 +27,7 @@ namespace CapaDatos
                     // AppendLine: Permite dar salto de línea
                     query.AppendLine("select u.IdUsuario, u.NombreCompleto, u.Clave, u.Estado, r.IdRol, r.Descripcion from usuario u");
                     query.AppendLine("inner join rol r on r.IdRol = u.IdRol");
+                    query.AppendLine("WHERE u.Estado = 1"); // Solo muestra usuarios activos (Estado = 1 [Activos]) 
                     // comando sql llamado "cmd" nuevo comando sql pide: axion de la ejecucion (query)
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     //Se le informa que el tipo de comando utilizado, es de texto
@@ -158,7 +159,7 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand("SP_ELIMINARUSUARIO", oconexion);
                     cmd.Parameters.AddWithValue("IdUsuario", obj.IdUsuario);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                     //Se le informa que el tipo de comando utilizado, es de texto
                     cmd.CommandType = CommandType.StoredProcedure;
