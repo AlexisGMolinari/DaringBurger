@@ -10,5 +10,6 @@ namespace CapaEntidad
     {
         public int CategoriaID { get; set; }
         public string NombreCategoria { get; set; }
+        public bool Estado { get; set; }
     }
 }
