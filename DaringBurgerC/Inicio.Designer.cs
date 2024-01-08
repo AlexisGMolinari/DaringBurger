@@ -36,10 +36,10 @@ namespace DaringBurgerC
             this.Menu = new System.Windows.Forms.ToolStrip();
             this.Usuarios = new FontAwesome.Sharp.IconDropDownButton();
             this.Inventario = new FontAwesome.Sharp.IconDropDownButton();
-            this.categoríasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoríaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoríasBebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BebidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CargarHamburguesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CargarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.EstablecerPreciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Informes = new FontAwesome.Sharp.IconDropDownButton();
             this.InformeCaja = new FontAwesome.Sharp.IconDropDownButton();
             this.Pedidos = new FontAwesome.Sharp.IconDropDownButton();
@@ -121,9 +121,10 @@ namespace DaringBurgerC
             // 
             this.Inventario.AutoSize = false;
             this.Inventario.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.categoríasToolStripMenuItem,
-            this.CargarProductoToolStripMenuItem,
-            this.EstablecerPreciosToolStripMenuItem});
+            this.categoríasBebidasToolStripMenuItem,
+            this.BebidasToolStripMenuItem,
+            this.CargarHamburguesasToolStripMenuItem,
+            this.CargarProductoToolStripMenuItem});
             this.Inventario.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed;
             this.Inventario.IconColor = System.Drawing.Color.Black;
             this.Inventario.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -135,35 +136,33 @@ namespace DaringBurgerC
             this.Inventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.Inventario.ToolTipText = "Inventario";
             // 
-            // categoríasToolStripMenuItem
+            // categoríasBebidasToolStripMenuItem
             // 
-            this.categoríasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.categoríaToolStripMenuItem});
-            this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.categoríasToolStripMenuItem.Text = "Bebidas";
-            this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
+            this.categoríasBebidasToolStripMenuItem.Name = "categoríasBebidasToolStripMenuItem";
+            this.categoríasBebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoríasBebidasToolStripMenuItem.Text = "Categorías Bebidas";
+            this.categoríasBebidasToolStripMenuItem.Click += new System.EventHandler(this.categoríasBebidasToolStripMenuItem_Click);
             // 
-            // categoríaToolStripMenuItem
+            // BebidasToolStripMenuItem
             // 
-            this.categoríaToolStripMenuItem.Name = "categoríaToolStripMenuItem";
-            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
-            this.categoríaToolStripMenuItem.Text = "Categoría";
-            this.categoríaToolStripMenuItem.Click += new System.EventHandler(this.categoríaToolStripMenuItem_Click);
+            this.BebidasToolStripMenuItem.Name = "BebidasToolStripMenuItem";
+            this.BebidasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.BebidasToolStripMenuItem.Text = "Bebidas";
+            this.BebidasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
+            // 
+            // CargarHamburguesasToolStripMenuItem
+            // 
+            this.CargarHamburguesasToolStripMenuItem.Name = "CargarHamburguesasToolStripMenuItem";
+            this.CargarHamburguesasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CargarHamburguesasToolStripMenuItem.Text = "Hamburguesas";
+            this.CargarHamburguesasToolStripMenuItem.Click += new System.EventHandler(this.CargarProductoToolStripMenuItem_Click);
             // 
             // CargarProductoToolStripMenuItem
             // 
             this.CargarProductoToolStripMenuItem.Name = "CargarProductoToolStripMenuItem";
-            this.CargarProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.CargarProductoToolStripMenuItem.Text = "Hamburguesas";
-            this.CargarProductoToolStripMenuItem.Click += new System.EventHandler(this.CargarProductoToolStripMenuItem_Click);
-            // 
-            // EstablecerPreciosToolStripMenuItem
-            // 
-            this.EstablecerPreciosToolStripMenuItem.Name = "EstablecerPreciosToolStripMenuItem";
-            this.EstablecerPreciosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.EstablecerPreciosToolStripMenuItem.Text = "Cargar Producto";
-            this.EstablecerPreciosToolStripMenuItem.Click += new System.EventHandler(this.EstablecerPreciosToolStripMenuItem_Click);
+            this.CargarProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CargarProductoToolStripMenuItem.Text = "Cargar Producto";
+            this.CargarProductoToolStripMenuItem.Click += new System.EventHandler(this.EstablecerPreciosToolStripMenuItem_Click);
             // 
             // Informes
             // 
@@ -294,17 +293,17 @@ namespace DaringBurgerC
         internal new System.Windows.Forms.ToolStrip Menu;
         internal FontAwesome.Sharp.IconDropDownButton Usuarios;
         internal FontAwesome.Sharp.IconDropDownButton Inventario;
-        internal System.Windows.Forms.ToolStripMenuItem EstablecerPreciosToolStripMenuItem;
         internal System.Windows.Forms.ToolStripMenuItem CargarProductoToolStripMenuItem;
+        internal System.Windows.Forms.ToolStripMenuItem CargarHamburguesasToolStripMenuItem;
         internal FontAwesome.Sharp.IconDropDownButton TotalCaja;
         internal System.Windows.Forms.Panel Contenedor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblusuario;
-        private System.Windows.Forms.ToolStripMenuItem categoríasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoríaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BebidasToolStripMenuItem;
         internal FontAwesome.Sharp.IconDropDownButton Informes;
         internal FontAwesome.Sharp.IconDropDownButton InformeCaja;
         internal FontAwesome.Sharp.IconDropDownButton Pedidos;
+        private System.Windows.Forms.ToolStripMenuItem categoríasBebidasToolStripMenuItem;
     }
 }
 

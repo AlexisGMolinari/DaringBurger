@@ -4,3 +4,9 @@ C:\Users\elcap\source\repos\DaringBurgerC\CapaEntidad\obj\Debug\CapaEntidad.cspr
 C:\Users\elcap\source\repos\DaringBurgerC\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\Users\elcap\source\repos\DaringBurgerC\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\Users\elcap\source\repos\DaringBurgerC\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\elcap\source\repos\DaringBurger\CapaEntidad\obj\Debug\CapaEntidad.pdb

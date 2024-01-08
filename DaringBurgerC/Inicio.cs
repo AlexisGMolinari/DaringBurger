@@ -62,10 +62,7 @@ namespace DaringBurgerC
 
 
 
-        private void categoríasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
 
@@ -111,12 +108,7 @@ namespace DaringBurgerC
             }
         }
 
-        private void categoríaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-                AbrirFormulario(Inventario, new frmCategoria());
-            
-        }
+       
 
         private void CargarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -184,6 +176,18 @@ namespace DaringBurgerC
                 // Llamar a la función para abrir el formulario
                 AbrirFormulario(dropDownButton, formulario);
             }
+        }
+
+        private void categoríasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                AbrirFormulario(Inventario, new frmBebidas());
+
+        }
+
+        private void categoríasBebidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(Inventario, new frmCategoria());
+
         }
     }
 }

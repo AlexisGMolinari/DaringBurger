@@ -23,9 +23,7 @@ namespace CapaDatos
                     // Trae consulta
                     StringBuilder query = new StringBuilder();
                     // AppendLine: Permite dar salto de línea
-                    query.AppendLine("SELECT c.CategoriaID, c.NombreCategoria, b.BebidaID, b.NombreBebida, b.Precio FROM Categorias c");
-                    query.AppendLine("JOIN Bebidas b ON c.CategoriaID = b.CategoriaID");
-                    query.AppendLine("WHERE c.Estado = 1 AND b.Estado = 1;"); // Solo muestra Categoria activos (Estado = 1 [Activos]) 
+                    query.AppendLine("SELECT CategoriaID, NombreCategoria, Estado FROM Categorias");
                     // comando sql llamado "cmd" nuevo comando sql pide: axion de la ejecucion (query)
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     //Se le informa que el tipo de comando utilizado, es de texto
@@ -151,6 +149,7 @@ namespace CapaDatos
                     // comando sql llamado "cmd", va a ejecutar el "Evento" creado en la DB como "EliminarCategoria"
                     SqlCommand cmd = new SqlCommand("SP_ELIMINARCATEGORIA", oconexion);
                     cmd.Parameters.AddWithValue("CategoriaID", obj.CategoriaID);
+                    cmd.Parameters.AddWithValue("Estado", obj.Estado);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 

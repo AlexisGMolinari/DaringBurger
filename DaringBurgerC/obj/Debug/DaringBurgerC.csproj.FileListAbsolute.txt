@@ -49,3 +49,4 @@ C:\Users\elcap\source\repos\DaringBurger\DaringBurgerC\obj\Debug\DaringBurgerC.p
 C:\Users\elcap\source\repos\DaringBurger\DaringBurgerC\obj\Debug\DaringBurgerC.frmCaja.resources
 C:\Users\elcap\source\repos\DaringBurger\DaringBurgerC\obj\Debug\DaringBurgerC.frmCajaInicial.resources
 C:\Users\elcap\source\repos\DaringBurger\DaringBurgerC\obj\Debug\DaringBurgerC.frmPedidos.resources
+C:\Users\elcap\source\repos\DaringBurger\DaringBurgerC\obj\Debug\DaringBurgerC.frmBebidas.resources
