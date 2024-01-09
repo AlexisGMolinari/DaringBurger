@@ -30,18 +30,7 @@ namespace DaringBurgerC
             cboEstado.SelectedIndex = 0;
             // Obtenermos el evento de lista creado en CD_Rol
             List<Rol> ListaRol = new CN_Rol().Listar();
-
-
-            // OPCION CREADA CON EL VIDEO PARA MOSTRAR LOS VALORES EN EL "COMBOBOX" DE ROL Y ESTADO
-            //foreach (Rol item in ListaRol)
-            // {
-            //     cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion }); //Debe mostrar el texto y valor de las propiedades
-            //     cboRol.DisplayMember = "Texto";
-            //     cboRol.ValueMember = "valor";
-            //     cboRol.SelectedIndex = 0;
-            // }
-
-            // OPCION CREADA CON [CHAT GPT] PARA MOSTRAR LOS VALORES EN EL "COMBOBOX" DE ROL Y ESTADO
+        
             foreach (Rol item in ListaRol)
             {
                 cboRol.Items.Add(new OpcionCombo() { valor = item.IdRol, Texto = item.Descripcion });

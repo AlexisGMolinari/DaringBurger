@@ -49,7 +49,8 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Clave = dr["Clave"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
-                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), Descripcion = dr["Descripcion"].ToString() }
+                                oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]), 
+                                Descripcion = dr["Descripcion"].ToString() }
                             }) ;
                         }
                     }
